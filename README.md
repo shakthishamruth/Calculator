@@ -1,2 +1,2 @@
 # Calculator
-Calculator made using python using pygame lib.
+A Calculator made using python using pygame lib.

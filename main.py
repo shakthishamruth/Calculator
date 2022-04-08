@@ -98,7 +98,7 @@ def mouse_input_c(x1, x2, y1, y2):
             eq = ''
 
 
-# Game loop
+# Main
 running = True
 while running:
     screen.fill((0, 0, 0))

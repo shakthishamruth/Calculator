@@ -20,11 +20,12 @@ x = 0
 y = 0
 
 input_state = True
+running = True
 
 
 # Functions
 def show_cal(x, y):
-    global a, eq
+    global eq
     cal = font.render(str(eq), True, (255, 255, 255))
     screen.blit(cal, (x, y))
 
@@ -100,7 +101,6 @@ def mouse_input_c(x1, x2, y1, y2):
 
 
 # Main loop
-running = True
 while running:
     screen.fill((0, 0, 0))
     screen.blit(background, (0, 0))

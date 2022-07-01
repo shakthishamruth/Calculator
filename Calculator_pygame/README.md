@@ -9,6 +9,6 @@ Note:
 
 * This project uses pygame so make sure you have pygame package installed.
 
-    Type `pip install pygame` in python terminal to install pygame package.
+            Type `pip install pygame` in python terminal to install pygame package.
 
 * Make sure "background.png", "icon.png" and "main.py" are in the same folder before running "main.py".

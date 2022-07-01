@@ -5,12 +5,12 @@ win = Tk()
 win.title("Calculator")
 
 # box
-e = Entry(win, width=44, borderwidth=5)
-e.grid(row=0, column=0, columnspan=3, padx=5, pady=5)
+e = Entry(win, width=41, borderwidth=10, font=500)
+e.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
 eq = e.get()
 
 
-# func
+# funcs
 def button_click(num):
     global eq
     current = e.get()
@@ -49,27 +49,27 @@ def button_sq():
 
 
 # Define buttons
-button_backs = Button(win, text="<X", padx=30, pady=5, command=button_backspace)
+button_backs = Button(win, text="← ", padx=15, pady=0, command=button_backspace, fg="#FF0000", font=500, borderwidth=2)
 
-button_1 = Button(win, text="1", padx=40, pady=20, command=lambda: button_click(1))
-button_2 = Button(win, text="2", padx=40, pady=20, command=lambda: button_click(2))
-button_3 = Button(win, text="3", padx=40, pady=20, command=lambda: button_click(3))
-button_4 = Button(win, text="4", padx=40, pady=20, command=lambda: button_click(4))
-button_5 = Button(win, text="5", padx=40, pady=20, command=lambda: button_click(5))
-button_6 = Button(win, text="6", padx=40, pady=20, command=lambda: button_click(6))
-button_7 = Button(win, text="7", padx=40, pady=20, command=lambda: button_click(7))
-button_8 = Button(win, text="8", padx=40, pady=20, command=lambda: button_click(8))
-button_9 = Button(win, text="9", padx=40, pady=20, command=lambda: button_click(9))
-button_0 = Button(win, text="0", padx=40, pady=20, command=lambda: button_click(0))
+button_1 = Button(win, text="1", padx=42, pady=20, command=lambda: button_click(1), bg="#D9D9D9", font=500)
+button_2 = Button(win, text="2", padx=42, pady=20, command=lambda: button_click(2), bg="#D9D9D9", font=500)
+button_3 = Button(win, text="3", padx=42, pady=20, command=lambda: button_click(3), bg="#D9D9D9", font=500)
+button_4 = Button(win, text="4", padx=42, pady=20, command=lambda: button_click(4), bg="#D9D9D9", font=500)
+button_5 = Button(win, text="5", padx=42, pady=20, command=lambda: button_click(5), bg="#D9D9D9", font=500)
+button_6 = Button(win, text="6", padx=42, pady=20, command=lambda: button_click(6), bg="#D9D9D9", font=500)
+button_7 = Button(win, text="7", padx=42, pady=20, command=lambda: button_click(7), bg="#D9D9D9", font=500)
+button_8 = Button(win, text="8", padx=42, pady=20, command=lambda: button_click(8), bg="#D9D9D9", font=500)
+button_9 = Button(win, text="9", padx=42, pady=20, command=lambda: button_click(9), bg="#D9D9D9", font=500)
+button_0 = Button(win, text="0", padx=42, pady=20, command=lambda: button_click(0), bg="#D9D9D9", font=500)
 
-button_sqr = Button(win, text='^2', padx=36, pady=20, command=button_sq)
-button_dot = Button(win, text=' .', padx=40, pady=20, command=lambda: button_click('.'))
-button_mul = Button(win, text="X", padx=40, pady=20, command=lambda: button_click('*'))
-button_div = Button(win, text="/", padx=40, pady=20, command=lambda: button_click('/'))
-button_sub = Button(win, text="-", padx=40, pady=20, command=lambda: button_click('-'))
-button_add = Button(win, text="+", padx=39, pady=20, command=lambda: button_click('+'))
-button_equals = Button(win, text="  =   ", padx=80, pady=20, command=button_eq)
-button_clr = Button(win, text="CLEAR", padx=74, pady=20, command=button_clr)
+button_sqr = Button(win, text='^2', padx=38, pady=20, command=button_sq, font=500)
+button_dot = Button(win, text='‧', padx=42, pady=20, command=lambda: button_click('.'), font=500)
+button_mul = Button(win, text="X", padx=39, pady=20, command=lambda: button_click('*'), font=500)
+button_div = Button(win, text="/", padx=42, pady=20, command=lambda: button_click('/'), font=500)
+button_sub = Button(win, text="-", padx=42, pady=20, command=lambda: button_click('-'), font=500)
+button_add = Button(win, text="+", padx=41, pady=20, command=lambda: button_click('+'), font=500)
+button_equals = Button(win, text="   =   ", padx=81, pady=20, command=button_eq, fg="#000000", font=500)
+button_clr = Button(win, text="CLEAR", padx=72, pady=20, command=button_clr, fg="#FF0000", font=500)
 
 # pos
 button_backs.grid(row=0, column=3)

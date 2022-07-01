@@ -100,6 +100,16 @@ def mouse_input_c(x1, x2, y1, y2):
             eq = ''
 
 
+def eval_ans():
+    global a, input_state, eq
+    try:
+        a = eval(eq)
+        input_state = False
+    except:
+        a = 'ERROR'
+        input_state = False
+
+
 # Main loop
 while running:
     screen.fill((0, 0, 0))
@@ -131,28 +141,13 @@ while running:
             mouse_input_backspace(684, 748, 34, 62)
             mouse_input_c(20, 196, 202, 284)
             if 600 < x < 778 and 576 < y < 656:
-                try:
-                    a = eval(eq)
-                    input_state = False
-                except:
-                    a = 'ERROR'
-                    input_state = False
+                eval_ans()
             if 28 < x < 56 and 148 < y < 172:
-                try:
-                    a = eval(eq)
-                    input_state = False
-                except:
-                    a = 'ERROR'
-                    input_state = False
+                eval_ans()
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_KP_ENTER or event.key == pygame.K_EQUALS:
-                try:
-                    a = eval(eq)
-                    input_state = False
-                except:
-                    a = 'ERROR'
-                    input_state = False
+                eval_ans()
             if event.key == pygame.K_BACKSPACE:
                 if not input_state:
                     input_state = True

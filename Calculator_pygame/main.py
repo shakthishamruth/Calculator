@@ -9,7 +9,7 @@ icon = pygame.image.load('icon.png')
 pygame.display.set_icon(icon)
 background = pygame.image.load('background.png')
 
-# Cal output
+# Cal_output
 font = pygame.font.Font('freesansbold.ttf', 64)
 eq = ''
 a = ''

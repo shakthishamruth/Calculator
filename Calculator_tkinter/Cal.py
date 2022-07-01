@@ -7,15 +7,17 @@ win.title("Calculator")
 # box
 e = Entry(win, width=41, borderwidth=10, font=500)
 e.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
+e.insert(0, "0")
 eq = e.get()
 
-input_state = True
+input_state = False
+error = False
 
 
 # funcs
 def button_click(num):
-    global eq, input_state
-    if not input_state and num.isdigit():
+    global eq, input_state, error
+    if not input_state and num.isdigit() or error:
         e.delete(0, END)
         eq = e.get()
     current = e.get()
@@ -23,6 +25,7 @@ def button_click(num):
     e.insert(0, str(current) + str(num))
     eq = e.get()
     input_state = True
+    error = False
 
 
 def button_clr():
@@ -37,14 +40,13 @@ def button_backspace():
         current = e.get()
         e.delete(0, END)
         e.insert(0, str(current)[:-1])
-        eq = e.get()
     else:
         e.delete(0, END)
-        eq = e.get()
+    eq = e.get()
 
 
 def button_eq():
-    global eq, input_state
+    global eq, input_state, error
     e.delete(0, END)
     try:
         soln = str(eval(eq))
@@ -53,6 +55,7 @@ def button_eq():
     except:
         e.insert(0, "ERROR")
         eq = e.get()
+        error = True
     input_state = False
 
 

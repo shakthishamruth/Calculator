@@ -104,10 +104,9 @@ def eval_ans():
     global a, input_state, eq
     try:
         a = eval(eq)
-        input_state = False
     except:
         a = 'ERROR'
-        input_state = False
+    input_state = False
 
 
 # Main loop

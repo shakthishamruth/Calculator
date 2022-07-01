@@ -90,7 +90,7 @@ button_add = Button(win, text="+", padx=41, pady=20, command=lambda: click('+'),
 button_equals = Button(win, text="   =   ", padx=81, pady=20, command=eval_ans, fg="#000000", font=500)
 button_clr = Button(win, text="CLEAR", padx=72, pady=20, command=clr, fg="#FF0000", font=500)
 
-# pos
+# positions
 button_backs.grid(row=0, column=3)
 
 button_1.grid(row=4, column=0)

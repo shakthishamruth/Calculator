@@ -15,7 +15,7 @@ error = False
 
 
 # funcs
-def button_click(num):
+def click(num):
     global eq, input_state, error
     if not input_state and num.isdigit() or error:
         e.delete(0, END)
@@ -28,7 +28,7 @@ def button_click(num):
     error = False
 
 
-def button_clr():
+def clr():
     global eq
     e.delete(0, END)
     eq = e.get()
@@ -45,7 +45,7 @@ def button_backspace():
     eq = e.get()
 
 
-def button_eq():
+def eval_ans():
     global eq, input_state, error
     e.delete(0, END)
     try:
@@ -59,7 +59,7 @@ def button_eq():
     input_state = False
 
 
-def button_sq():
+def sq():
     global eq
     current = e.get()
     e.delete(0, END)
@@ -70,25 +70,25 @@ def button_sq():
 # Define buttons
 button_backs = Button(win, text="← ", padx=15, pady=0, command=button_backspace, fg="#FF0000", font=500, borderwidth=2)
 
-button_1 = Button(win, text="1", padx=42, pady=20, command=lambda: button_click("1"), bg="#D9D9D9", font=500)
-button_2 = Button(win, text="2", padx=42, pady=20, command=lambda: button_click("2"), bg="#D9D9D9", font=500)
-button_3 = Button(win, text="3", padx=42, pady=20, command=lambda: button_click("3"), bg="#D9D9D9", font=500)
-button_4 = Button(win, text="4", padx=42, pady=20, command=lambda: button_click("4"), bg="#D9D9D9", font=500)
-button_5 = Button(win, text="5", padx=42, pady=20, command=lambda: button_click("5"), bg="#D9D9D9", font=500)
-button_6 = Button(win, text="6", padx=42, pady=20, command=lambda: button_click("6"), bg="#D9D9D9", font=500)
-button_7 = Button(win, text="7", padx=42, pady=20, command=lambda: button_click("7"), bg="#D9D9D9", font=500)
-button_8 = Button(win, text="8", padx=42, pady=20, command=lambda: button_click("8"), bg="#D9D9D9", font=500)
-button_9 = Button(win, text="9", padx=42, pady=20, command=lambda: button_click("9"), bg="#D9D9D9", font=500)
-button_0 = Button(win, text="0", padx=42, pady=20, command=lambda: button_click("0"), bg="#D9D9D9", font=500)
+button_1 = Button(win, text="1", padx=42, pady=20, command=lambda: click("1"), bg="#D9D9D9", font=500)
+button_2 = Button(win, text="2", padx=42, pady=20, command=lambda: click("2"), bg="#D9D9D9", font=500)
+button_3 = Button(win, text="3", padx=42, pady=20, command=lambda: click("3"), bg="#D9D9D9", font=500)
+button_4 = Button(win, text="4", padx=42, pady=20, command=lambda: click("4"), bg="#D9D9D9", font=500)
+button_5 = Button(win, text="5", padx=42, pady=20, command=lambda: click("5"), bg="#D9D9D9", font=500)
+button_6 = Button(win, text="6", padx=42, pady=20, command=lambda: click("6"), bg="#D9D9D9", font=500)
+button_7 = Button(win, text="7", padx=42, pady=20, command=lambda: click("7"), bg="#D9D9D9", font=500)
+button_8 = Button(win, text="8", padx=42, pady=20, command=lambda: click("8"), bg="#D9D9D9", font=500)
+button_9 = Button(win, text="9", padx=42, pady=20, command=lambda: click("9"), bg="#D9D9D9", font=500)
+button_0 = Button(win, text="0", padx=42, pady=20, command=lambda: click("0"), bg="#D9D9D9", font=500)
 
-button_sqr = Button(win, text='^2', padx=38, pady=20, command=button_sq, font=500)
-button_dot = Button(win, text='‧', padx=42, pady=20, command=lambda: button_click('.'), font=500)
-button_mul = Button(win, text="X", padx=39, pady=20, command=lambda: button_click('*'), font=500)
-button_div = Button(win, text="/", padx=42, pady=20, command=lambda: button_click('/'), font=500)
-button_sub = Button(win, text="-", padx=42, pady=20, command=lambda: button_click('-'), font=500)
-button_add = Button(win, text="+", padx=41, pady=20, command=lambda: button_click('+'), font=500)
-button_equals = Button(win, text="   =   ", padx=81, pady=20, command=button_eq, fg="#000000", font=500)
-button_clr = Button(win, text="CLEAR", padx=72, pady=20, command=button_clr, fg="#FF0000", font=500)
+button_sqr = Button(win, text='^2', padx=38, pady=20, command=sq, font=500)
+button_dot = Button(win, text='‧', padx=42, pady=20, command=lambda: click('.'), font=500)
+button_mul = Button(win, text="X", padx=39, pady=20, command=lambda: click('*'), font=500)
+button_div = Button(win, text="/", padx=42, pady=20, command=lambda: click('/'), font=500)
+button_sub = Button(win, text="-", padx=42, pady=20, command=lambda: click('-'), font=500)
+button_add = Button(win, text="+", padx=41, pady=20, command=lambda: click('+'), font=500)
+button_equals = Button(win, text="   =   ", padx=81, pady=20, command=eval_ans, fg="#000000", font=500)
+button_clr = Button(win, text="CLEAR", padx=72, pady=20, command=clr, fg="#FF0000", font=500)
 
 # pos
 button_backs.grid(row=0, column=3)

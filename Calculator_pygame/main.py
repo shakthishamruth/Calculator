@@ -38,65 +38,65 @@ def show_ans(x, y):
 
 def input_num(x):
     global input_state, eq, a
-    if input_state == False:
+    if not input_state:
         input_state = True
-        eq = (f'{x}')
+        eq = f'{x}'
         a = ''
-    elif input_state == True:
-        eq += (f'{x}')
+    elif input_state:
+        eq += f'{x}'
 
 
 def input_oper(x):
     global input_state, eq, a
-    if input_state == False:
+    if not input_state:
         input_state = True
         eq = ''
         a = ''
-    elif input_state == True:
-        eq += (f'{x}')
+    elif input_state:
+        eq += f'{x}'
 
 
 def mouse_input(x1, x2, y1, y2, z):
     global x, y, input_state, eq, a
     if x1 < x < x2 and y1 < y < y2:
-        if input_state == False:
+        if not input_state:
             input_state = True
-            eq = (f'{z}')
+            eq = f'{z}'
             a = ''
-        elif input_state == True:
-            eq += (f'{z}')
+        elif input_state:
+            eq += f'{z}'
 
 
 def mouse_input_oper(x1, x2, y1, y2, z):
     global x, y, input_state, eq, a
     if x1 < x < x2 and y1 < y < y2:
-        if input_state == False:
+        if not input_state:
             input_state = True
             eq = ''
             a = ''
-        elif input_state == True:
-            eq += (f'{z}')
+        elif input_state:
+            eq += f'{z}'
 
 
 def mouse_input_backspace(x1, x2, y1, y2):
     global x, y, input_state, eq, a
     if x1 < x < x2 and y1 < y < y2:
-        if input_state == False:
+        if not input_state:
             input_state = True
             eq = ''
             a = ''
-        elif input_state == True:
+        elif input_state:
             eq = f'{eq[:-1]}'
 
 
 def mouse_input_c(x1, x2, y1, y2):
     global x, y, input_state, eq, a
     if x1 < x < x2 and y1 < y < y2:
-        if input_state == False:
+        if not input_state:
             input_state = True
             eq = ''
             a = ''
-        elif input_state == True:
+        elif input_state:
             eq = ''
 
 
@@ -154,14 +154,14 @@ while running:
                     a = 'ERROR'
                     input_state = False
             if event.key == pygame.K_BACKSPACE:
-                if input_state == False:
+                if not input_state:
                     input_state = True
                     eq = ''
                     a = ''
-                elif input_state == True:
+                elif input_state:
                     eq = f'{eq[:-1]}'
             if event.key == pygame.K_a:
-                if input_state == False:
+                if not input_state:
                     eq = f'{a}'
                     a = ''
                     input_state = True

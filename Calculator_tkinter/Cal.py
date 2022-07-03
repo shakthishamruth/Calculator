@@ -3,6 +3,7 @@ from tkinter import *
 # window
 win = Tk()
 win.title("Calculator")
+win.iconbitmap('icon.ico')
 
 # box
 e = Entry(win, width=41, borderwidth=10, font=500)
